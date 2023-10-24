@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Objects;
 
 public class App {
 
@@ -19,7 +20,20 @@ public class App {
         return passengers;
     }
 
+    public void searchFlight(String destination){
+        boolean found = false;
+        for (Flight flight : flights.values()){
 
+            if(Objects.equals(flight.getDestination(), destination)){
+                System.out.println(flight.displayFlightInfo());
+                found = true;
+            }
+
+        }
+        if (!found){
+            System.out.println("No available flights to this destination");
+        }
+    }
     public void addFlight(String flightID, Flight flight){
         this.flights.put(flightID,flight);
     }
@@ -52,5 +66,9 @@ public class App {
             System.out.println(flight.displayFlightInfo());
         }
 
+    }
+
+    public HashMap<String, Flight> getFlightList() {
+        return flights;
     }
 }

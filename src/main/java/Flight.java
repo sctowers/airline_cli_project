@@ -37,7 +37,8 @@ public class Flight {
 
     }
 
-    public String getFlightID() {
+    public String getFlightID(){
+
         return flightID;
     }
 
