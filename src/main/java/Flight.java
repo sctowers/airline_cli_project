@@ -25,13 +25,15 @@ public class Flight {
 
     }
 
-    public void displayFlightInfo(){
-        System.out.println("Flight ID: " + flightID);
-        System.out.println("Destination: " + destination);
-        System.out.println("Passengers on the flight: ");
+    public String displayFlightInfo(){
+        String passengerNameList = "";
         for (Passenger passenger : passengerHashMap.values()){
-            System.out.println("  - " + passenger.getName());
+            passengerNameList += " - " + passenger.getName();
         }
+        return "Flight ID: " + flightID +
+                "Destination: " + destination +
+                "Passengers on the flight: " + passengerNameList;
+
     }
 
     public String getFlightID() {
