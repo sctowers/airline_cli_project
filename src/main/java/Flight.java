@@ -13,6 +13,7 @@ public class Flight {
     }
 
     public void addPassenger(Passenger passenger){
+
         passengerHashMap.put(passenger.getPassengerID(), passenger);
     }
 
@@ -22,16 +23,16 @@ public class Flight {
 
     public void cancelFlight(){
         passengerHashMap.clear();
-
     }
+
 
     public String displayFlightInfo(){
         String passengerNameList = "";
         for (Passenger passenger : passengerHashMap.values()){
             passengerNameList += " - " + passenger.getName();
         }
-        return "Flight ID: " + flightID +
-                "Destination: " + destination +
+        return "Flight ID: " + flightID + " " +
+                "Destination: " + destination + " "+
                 "Passengers on the flight: " + passengerNameList;
 
     }
